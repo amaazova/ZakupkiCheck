@@ -6,8 +6,12 @@ import threading
 from pathlib import Path
 from typing import Any
 
-PROJECT_ROOT = Path("/Users/aza/Downloads/zakupki/last")
-FINDINGS_PATH = PROJECT_ROOT / "workspace" / "eval" / "fas_findings.jsonl"
+_REPO_ROOT = Path(__file__).parent.parent.parent
+_FINDINGS_CANDIDATES = [
+    _REPO_ROOT / "research" / "results" / "data" / "fas_findings.jsonl",
+    Path(__file__).parent.parent / "data" / "fas_findings.jsonl",
+]
+FINDINGS_PATH = next((p for p in _FINDINGS_CANDIDATES if p.is_file()), _FINDINGS_CANDIDATES[0])
 CHROMA_DIR = Path(__file__).parent.parent / "data" / "chroma"
 COLLECTION_NAME = "fas_findings_v1"
 EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"

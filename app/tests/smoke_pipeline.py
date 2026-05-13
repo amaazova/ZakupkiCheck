@@ -8,10 +8,8 @@ import time
 from pathlib import Path
 
 APP_DIR = Path(__file__).parent.parent
-PROJECT_ROOT = Path("/Users/aza/Downloads/zakupki/last")
-for p in (APP_DIR, PROJECT_ROOT):
-    if str(p) not in sys.path:
-        sys.path.insert(0, str(p))
+if str(APP_DIR) not in sys.path:
+    sys.path.insert(0, str(APP_DIR))
 
 from components.aggregator import aggregate  # noqa: E402
 from components.extractor import extract  # noqa: E402

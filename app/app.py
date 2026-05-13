@@ -7,9 +7,9 @@ from pathlib import Path
 
 import streamlit as st
 
-PROJECT_ROOT = Path("/Users/aza/Downloads/zakupki/last")
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+APP_DIR = Path(__file__).parent
+if str(APP_DIR) not in sys.path:
+    sys.path.insert(0, str(APP_DIR))
 
 from components.aggregator import aggregate  # noqa: E402
 from components.cache import CacheLayer  # noqa: E402
@@ -23,7 +23,6 @@ from components.retrieval import find_similar_cases, preload_retriever  # noqa: 
 from components.rule_engine import evaluate  # noqa: E402
 from components.schemas import DocType, Finding, RiskReport  # noqa: E402
 
-APP_DIR = Path(__file__).parent
 CACHE_DB = APP_DIR / "data" / "cache.db"
 LR_MODEL_PATH = APP_DIR / "models" / "lr_model.joblib"
 

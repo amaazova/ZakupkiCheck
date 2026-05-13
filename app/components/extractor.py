@@ -2,29 +2,30 @@
 from __future__ import annotations
 
 import json
-import sys
 import time
 from pathlib import Path
 from typing import Optional
 
-PROJECT_ROOT = Path("/Users/aza/Downloads/zakupki/last")
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from workspace.scripts import config as project_config  # noqa: E402
-from workspace.scripts.extraction_runner import (  # noqa: E402
+from .llm_client import (
+    DEFAULT_MODEL as _DEFAULT_MODEL,
     call_llm_with_retries,
     get_client,
     parse_llm_json,
 )
-
 from .logging_config import get_logger
 from .rate_limiter import TokenBucketLimiter
 from .schemas import DocType, ExtractedFacts, ExtractionResult
 
 PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
-TAXONOMY_HINTS_PATH = PROJECT_ROOT / "workspace" / "eval" / "taxonomy_hints.json"
-DEFAULT_MODEL = project_config.MODELS["v4flash"]
+
+_hints_candidates = [
+    Path(__file__).parent.parent.parent / "taxonomy" / "taxonomy_hints.json",
+    Path(__file__).parent.parent / "taxonomy_hints.json",
+]
+TAXONOMY_HINTS_PATH: Optional[Path] = next(
+    (p for p in _hints_candidates if p.is_file()), None
+)
+DEFAULT_MODEL = _DEFAULT_MODEL
 
 _USER_PROMPT_FILES = {
     DocType.TZ: "tz_extraction.md",
@@ -103,7 +104,7 @@ def _load_user_prompt(doc_type: DocType) -> str:
 def _load_taxonomy_hints() -> dict[str, str]:
     global _taxonomy_hints_cache
     if _taxonomy_hints_cache is None:
-        if TAXONOMY_HINTS_PATH.is_file():
+        if TAXONOMY_HINTS_PATH is not None and TAXONOMY_HINTS_PATH.is_file():
             _taxonomy_hints_cache = json.loads(
                 TAXONOMY_HINTS_PATH.read_text(encoding="utf-8")
             )
