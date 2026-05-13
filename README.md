@@ -2,6 +2,17 @@
 
 > Автоматизированная проверка закупочной документации по 44-ФЗ с применением LLM
 
+**[Онлайн-демо](https://zakupkicheck-ff2vdaxn9rqrfcezr3nkbv.streamlit.app)**
+
+<p align="center">
+  <img src="docs/screenshots/01_analysis.png" width="48%" />
+  <img src="docs/screenshots/02_highlight.png" width="48%" />
+</p>
+<p align="center">
+  <img src="docs/screenshots/03_recommendations.png" width="48%" />
+  <img src="docs/screenshots/04_precedents.png" width="48%" />
+</p>
+
 Репозиторий содержит два компонента:
 
 1. **Research pipeline** (`research/`) — извлечение признаков соответствия из ТЗ
