@@ -1,0 +1,77 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Heavy data (download separately — see data/sample/README.md)
+data/raw_fas/
+data/raw_tz/
+data/raw_documents/
+data/parsed/
+data/parsed_clean/
+data/parsed_recovered/
+data/runtime_docs_clean/
+data/runtime_docs_recovered/
+data/runtime_reqqual_eis_recovered/
+data/parsed_reqqual_eis_recovered/
+data/standalone_tz/
+data/legal_snapshots/
+data/contracts/
+data/_cache/
+data/_archive/
+data/_provenance/
+data/gold_stage20_pilot_stage_a_raw/
+
+# Heavy artifacts
+*.parquet
+*.db
+*.sqlite*
+chroma_db/
+chroma_*/
+app/data/chroma/
+
+# HuggingFace / sentence-transformers caches
+.models/
+sentence-transformers/
+*.bin
+*.safetensors
+
+# Pipeline checkpoints / scratch
+_checkpoints/
+archive/
+stageE_runs/
+new_fas_wave_raw/
+runs/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

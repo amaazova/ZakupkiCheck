@@ -1,0 +1,12 @@
+detector,status,n_calls,input_tokens,output_tokens,cost_usd
+b2_zeroshot,exhausted_retries,1,0,0,0.0
+b2_zeroshot,ok,953,4771553,157670,1.667235
+b2_zeroshot,retry,5,0,0,0.0
+b3_memorization,ok,100,562192,20131,0.197819
+b3_taxonomy,ok,949,4815611,172917,1.694872
+b3_taxonomy,retry,5,0,0,0.0
+brand_check,ok,710,4619102,85979,1.554637
+completeness_check,ok,954,4928513,90030,1.657249
+ktru_check,ok,870,4797013,109899,1.632854
+restriction_check,ok,954,4977167,106866,1.687794
+TOTAL,ok_only,5490,29471151,743492,10.09246

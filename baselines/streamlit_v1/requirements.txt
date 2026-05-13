@@ -1,0 +1,12 @@
+streamlit>=1.30
+openai>=1.0
+python-docx
+PyMuPDF
+fpdf2>=2.7
+sentence-transformers
+chromadb>=0.4
+python-dotenv
+tqdm
+pandas
+scikit-learn
+tenacity

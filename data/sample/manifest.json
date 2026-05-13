@@ -1,0 +1,87 @@
+[
+  {
+    "decision_id": "202300100161028454",
+    "verdict": "violation_established",
+    "cluster_id": 28,
+    "finding_types": [
+      "other",
+      "restrictive_requirement"
+    ],
+    "size_bytes": 36380
+  },
+  {
+    "decision_id": "202300114959022461",
+    "verdict": "violation_not_established",
+    "cluster_id": 46,
+    "finding_types": [],
+    "size_bytes": 48611
+  },
+  {
+    "decision_id": "202300121671004760",
+    "verdict": "violation_established",
+    "cluster_id": 33,
+    "finding_types": [
+      "incomplete_description",
+      "restrictive_requirement"
+    ],
+    "size_bytes": 29736
+  },
+  {
+    "decision_id": "202300145687000936",
+    "verdict": "violation_not_established",
+    "cluster_id": 28,
+    "finding_types": [
+      "restrictive_requirement"
+    ],
+    "size_bytes": 41279
+  },
+  {
+    "decision_id": "202300187298009211",
+    "verdict": "violation_established",
+    "cluster_id": 51,
+    "finding_types": [
+      "restrictive_requirement"
+    ],
+    "size_bytes": 24069
+  },
+  {
+    "decision_id": "202400113223001739",
+    "verdict": "violation_not_established",
+    "cluster_id": 28,
+    "finding_types": [],
+    "size_bytes": 43080
+  },
+  {
+    "decision_id": "202400116297005065",
+    "verdict": "violation_established",
+    "cluster_id": 28,
+    "finding_types": [
+      "brand_without_equivalent",
+      "restrictive_requirement"
+    ],
+    "size_bytes": 23344
+  },
+  {
+    "decision_id": "202400126646000218",
+    "verdict": "violation_not_established",
+    "cluster_id": 51,
+    "finding_types": [],
+    "size_bytes": 20819
+  },
+  {
+    "decision_id": "202400126646000601",
+    "verdict": "violation_not_established",
+    "cluster_id": 28,
+    "finding_types": [
+      "brand_without_equivalent"
+    ],
+    "size_bytes": 20978
+  },
+  {
+    "decision_id": "202400126646000695",
+    "verdict": "violation_not_established",
+    "cluster_id": 13,
+    "finding_types": [],
+    "size_bytes": 43574
+  }
+]
