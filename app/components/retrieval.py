@@ -59,7 +59,7 @@ class _Retriever:
         try:
             import chromadb
             from chromadb.utils import embedding_functions
-        except ImportError:
+        except Exception:
             return False
 
         try:
